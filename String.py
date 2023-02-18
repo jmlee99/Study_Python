@@ -120,4 +120,4 @@ print(s[-3])
 print(s[-2])
 print(s[-1])
 
-# 문자열 슬라이싱()
+# 문자열 슬라이싱(slicing)
