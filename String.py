@@ -43,7 +43,7 @@ print('\n')
         \r  == 캐리지 리턴
         \t  == 수행 탭
         \v  == 수직 탭
-        \ooo  == 8진수 문자   
+        \ooo  == 8진수 문자
 """
 
 # 문자열 생성
@@ -121,3 +121,106 @@ print(s[-2])
 print(s[-1])
 
 # 문자열 슬라이싱(slicing)
+s = "JaeMinLab - JaeMin Computer Laboratory"
+print(s)
+print(s[0:9]) # 0에서 8까지
+print(s[:9])
+print(s[12:])
+print(s[-10:])
+print(s[-19:-11])
+print('\n')
+
+"""
+    문자열 메소드(String Methods)
+        - 파이썬은 문자열 처리를 아주 쉽게 처리할 수 있는 많은 메소드들을 제공
+        - 문자열을 다루는 주요 메소드들을 표로 정리
+        
+        capitalize() / casefold()
+            - 문자열 "string"에 대해 capitalize()를 실행하면, 첫 문자가 대문자인 "String"문자열로 변환
+            - 문자열 "String"에 대해 casefold()를 실행하면, 모든 문자가 소문자인 "string"문자열로 변환
+            
+        count()
+            - 문자열 "string string"에 포함된 문자 's'의 갯수를 반환하도록 count()를 실행
+            - 문자 's'가 총 2개 존재하므로 2를 반환
+            - 부분 문자열 'str'이 몇개인지 반환하는 것도 가능하고, 부분 문자열 'str'이 총 2개 존재하므로 2를 반환
+            
+        find() / rfind()
+            - 문자열 "string string"에서 문자 's'의 해당 위치를 find()를 통해 반환
+            - 문자열 "string string"에서 부분 분자열 "ing"의 해당 위치를 find()를 통해 반환
+            - 문자열 "string string"에서 문자 's'를 해당 위치를 rfind()를 통해 오른쪽부터 탐색하여 가장 큰 인덱스를 반환
+            - 문자열 "string string"에서 부분 문자열 "ring"를 해당 위치를 rfind()를 통해 오른쪽부터 탐색하여 가장 큰
+                인덱스를 반환
+            
+        index() / rindex()
+            - 문자열 "string string"에서 문자 's'의 해당 위치를 index()를 통해 반환
+            - 문자열 "string string"에서 부분 문자열 "ing"의 해당 위치를 index()를 통해 반환
+            - 문자열 "string string"에서 문자 's'를 해당 위치를 rindex()를 통해 오른쪽부터 탐색하여 가장 큰 인덱스를 반환
+            - 문자열 "string string"에서 부분 문자열 "ring"를 해당 위치를 rindex()를 통해 오른쪽부터 탐색하여 가장 큰 인덱스를 반환
+            - 문자열 "string string"에서 문자 'z'를 해당 위치를 rindex() 함수를 통해 오른쪽부터 탐색하지만 찾을 수 없어서 'ValueError'발생
+        
+        isalnum()
+            - isalnum()은 문자열에 알파벳이나 숫자가 1개 이상 있으면 True 반환
+            - 문자열 "string"은 알파벳으로 구성 되었으므로 True 반환
+            - 문자열 "한글"은 알파벳으로 구성 되어있으므로 True 반환
+            - 문자열 "!@#"은 특수기호로 구성 되어있으므로 False 반환
+            - 문자열 "123"은 숫자들로 구성 되어있으므로 True 반환
+
+        isalpha()
+            - isalpha()는 문자열에 알파벳이 1개 이상 있으면 True 반환
+            - 문자열 "string"은 알파벳으로 구성 되었으므로 True 반환
+            - 문자열 "한글"은 알파벳으로 구성 되어있으므로 True 반환
+            - 문자열 "!@#"은 특수기호로 구성 되어있으므로 False 반환
+            - 문자열 "123"은 숫자들로 구성 되어있으므로 False 반환
+            
+        isdecimal()
+            - isdecimal()는 문자열의 모든 문자가 10진수 문자이면 True 반환
+            - 문자열 "123"은 모두 10진수 문자열이므로 True 반환
+            - 문자열 "1.23"은 실수형 문자열이므로 False 반환
+        
+        isdigit()
+            - isdigit()는 문자열의 모든 문자가 숫자일 때 True 반환
+            - 문자열 "123"은 모든 문자가 숫자에 해당하므로 True 반환
+            - 문자열 "1.23"은 문자 중 숫자에 해당안되는 . 이 존재하여 False
+"""
+# capitalize() / casefold()
+s = "string"
+print(s)
+s = s.capitalize()
+print(s)
+s = s.casefold()
+print(s)
+
+#count
+s = "string string"
+print(s)
+print(s.count('s'))
+print(s.count("str"))
+
+#find() / rfind()
+s = "string string"
+print(s.find('s'))      # 인덱스 값을 찾아줌
+print(s.find("ing"))    # 문자열이 시작되는 인덱스 값 도출
+print(s.rfind('s'))     # 오른쪽부터 탐색하여 찾음
+print(s.rfind("ring"))  # 오른쪽부터 탐색하여 찾음
+
+#index() / rindex()
+s = "string string"
+print(s.index('s'))
+print(s.index("ing"))
+print(s.rindex('s'))
+print(s.rindex("ring"))
+#print(s.rindex('z')) == ValueError를 발생 시킨다.
+
+#isalnum()
+print("string".isalnum())
+print("한글".isalnum())
+print("!@#".isalnum())
+print("123".isalnum())
+
+#isalnum()
+print("string".isalpha())
+print("한글".isalpha())
+print("!@#".isalpha())
+print("123".isalpha())
+
+#isdecimal()
