@@ -224,3 +224,4 @@ print("!@#".isalpha())
 print("123".isalpha())
 
 #isdecimal()
+print("string")
