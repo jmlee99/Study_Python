@@ -33,8 +33,7 @@
             - + : 읽기/ 쓰기 모드
             - t : 텍스트 모드(기본값), 텍스트 파일을 처리
             - b : 이진 모드, 이진 파일을 처리
-            
-        
+             
 """
 
 #표준 입력 함수
@@ -76,3 +75,110 @@ for i in range(2, 10):
 f = open("file.txt", 'w')
 f = open("file.txt", 'r')
 f.close()
+
+#write()
+f = open("file.txt", 'w')
+f.write("Hello Python")
+f.close()
+
+# 파일 출력 하는 코드
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+
+file.close()
+
+#writelines()
+list = ['One\n', 'Two\n', 'Three\n']
+f = open("file.txt", 'w')
+f.writelines(list)
+f.close()
+# 파일 출력 하는 코드
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+
+file.close()
+
+#표준입력 -> 파일 쓰기
+text = input("입력 : ")
+f = open("file.txt", 'w')
+f.write(text)
+f.close()
+# 파일 출력 하는 코드
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+file.close()
+# 여러 값 입력
+text = [str(text + '\n') for text in input("여러 값 입력 : ").split()] # 값이 바뀔 때 마다 \n 추가되게 한다.
+print(text) # split()메소드 확인
+f = open("file.txt", 'w')
+f.writelines(text)
+f.close()
+
+# 파일 출력 하는 코드
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+file.close()
+
+#q를 입력할 때 까지 파일에 반복해서 입력
+x = ""
+text = ""
+while x != 'q':
+    x = input("반복 입력 : ")
+    text += x + '\n'
+
+f = open("file.txt", 'w')
+f.writelines(text)
+f.close()
+
+# 파일 출력 하는 코드
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+file.close()
+
+#[연습] 구구단 결과를 파일에 쓰기
+f = open("file.txt", 'w')
+for i in range(2, 10):
+    for j in range(1, 10):
+        f.write("{0} x {1} = {2}\n".format(i, j, i * j))
+    else:
+        f.write('\n')
+f.close()
+
+# 파일 출력 하는 코드
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+file.close()
+
+print("\n")
+print("*********텍스트 파일 출력*********")
+
+#텍스트 파일 출력
+
+#readline()
+#readline()을 이용하여 텍스트 파일을 라인 단위로 읽고 화면에 출력
+
+
