@@ -375,6 +375,7 @@ noname + 3     # 이름이 정의 되지 않음
 
 #TypeError
 
+
 '1' + 1         # Type가 맞지 않는 경우
 
 #ValueError
