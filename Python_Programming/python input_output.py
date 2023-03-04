@@ -177,8 +177,81 @@ print("\n")
 print("*********텍스트 파일 출력*********")
 
 #텍스트 파일 출력
-
+f = open("anthem.txt", 'w')
+f.write("동해물과 백두산이 마르고 닳도록\n")
+f.write("하느님이 보우하사 우리나라 만세\n")
+f.close()
 #readline()
-#readline()을 이용하여 텍스트 파일을 라인 단위로 읽고 화면에 출력
+# - readline()을 이용하여 텍스트 파일을 라인 단위로 읽고 화면에 출력
+f = open("anthem.txt", 'r')
+while True:
+    line = f.readline()
+    if not line:
+        break
+    print(line)
+f.close()
+
+#readlines()
+f = open("anthem.txt", 'r')
+lines = f.readlines()
+print(lines)
+f.close
+
+#read() - 단순히 파일을 읽는 함수
+f = open("anthem.txt", 'r')
+data = f.read()
+print(data)
+f.close()
+
+#tell() - 파일 포인터 위치 출력
+f = open('anthem.txt', 'r')
+while True:
+    print(f.tell())
+    line = f.readline()
+    if not line: break
+    print(line)
+f.close()
+
+#seek() - 파일 포인터 위치 이동
+f = open('anthem.txt', 'r')
+f.seek(46)
+line = f.readline()
+print(line)
+f.seek(0)
+line = f.readline()
+print(line)
+f.close()
+
+#with문 - 항상 파일을 open()함수로 열고, close()함수로 닫아야 하는 일을 자동으로 처리
+f = open('file.txt', 'w')
+f.write("Hello Python")
+f.close()
+
+with open('file.txt', 'w') as f:
+    f.write("Hello Python")
+
+#표준 입력으로 받은 내용을 파일로 쓰기
+f = open('file.txt', 'w')
+line = ''
+while True:
+    line = input()
+    if not line: break
+    f.writelines(line + '\n')
+
+f.close()
+file = open('file.txt')
+while True:
+    line = file.readline()
+    if not line:
+        break
+    print(line)
+file.close()
+
+"""
+    텍스트 파일 vs 이진 파일
+        - 텍스트 파일 : 사람이 읽을 수 있는 텍스트로 구성된 파일
+        - 이진 파일 : 텍스트가 아닌 비트 단위의 파일
+        - 이진 파일의 종류 : 그림, 음악, 영상, 프로그램 파일 등
+"""
 
 
