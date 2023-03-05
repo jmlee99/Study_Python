@@ -93,5 +93,4 @@ print(result)
 result, result2 = plus_and_minus(8, 5)
 print(result, result2)
 
-
 #[예제] 계산기 함수
